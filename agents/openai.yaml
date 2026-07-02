@@ -1,0 +1,4 @@
+interface:
+  display_name: "StellaGate AI Agent"
+  short_description: "Deploy and check StellaGate-UI on a VPS"
+  default_prompt: "Use $stellagate-ai-agent to deploy StellaGate-UI on my VPS and report the panel URL, login info, subscription link, and activation status."
