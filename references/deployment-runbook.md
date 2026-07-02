@@ -5,7 +5,7 @@
 Collect only what is necessary:
 
 - VPS host/IP and SSH user/access method
-- Cloud URL, defaulting to `https://stellagate.simuse.uk`
+- Authorization endpoint URL, defaulting to `https://stellagate.simuse.uk`
 - Optional invite code
 - Optional desired protocol only if the current installer supports it; otherwise the panel can switch protocols after activation
 
@@ -101,8 +101,8 @@ Return:
 - Username
 - Password
 - Subscription link if available
-- Cloud URL
+- Authorization endpoint URL
 - Activation state
 - Xray/service state
 
-Also include what was not completed, such as "invite not provided, activation is waiting in the panel" or "Cloud returned `invite_disabled`, so the panel installed but is still locked."
+Also include what was not completed, such as "invite not provided, activation is waiting in the panel" or "the authorization endpoint returned `invite_disabled`, so the panel installed but is still locked."

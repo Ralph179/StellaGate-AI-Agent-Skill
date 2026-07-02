@@ -12,7 +12,7 @@ DEFAULT_INSTALLER = "https://raw.githubusercontent.com/Ralph179/StellaGate-UI/co
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build a StellaGate-UI installer command.")
-    parser.add_argument("--cloud", default="https://stellagate.simuse.uk", help="StellaGate-Cloud URL")
+    parser.add_argument("--cloud", default="https://stellagate.simuse.uk", help="Authorization endpoint URL")
     parser.add_argument("--invite", help="Optional invite code for immediate activation")
     parser.add_argument("--installer", default=DEFAULT_INSTALLER, help="Installer URL")
     args = parser.parse_args()

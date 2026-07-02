@@ -1,17 +1,17 @@
 # StellaGate AI Agent Skill
 
-StellaGate AI Agent Skill is a deployment and troubleshooting skill for AI coding agents such as Codex and Claude Code. It helps an agent install StellaGate-UI on a user's VPS, connect it to StellaGate-Cloud, optionally activate it with an invite code, verify panel/Xray/subscription health, and explain common activation errors.
+StellaGate AI Agent Skill is a deployment and troubleshooting skill for AI coding agents such as Codex and Claude Code. It helps an agent install StellaGate-UI on a user's VPS, configure the official authorization endpoint, optionally activate it with an invite code, verify panel/Xray/subscription health, and explain common activation errors.
 
-This repository is not StellaGate-Cloud and not StellaGate-UI. It is the agent-facing operation guide that keeps the deployment workflow consistent with both projects.
+This repository is not StellaGate-Cloud and not StellaGate-UI. StellaGate-Cloud is the author's private management panel; this repository is only the agent-facing operation guide for deploying the local VPS panel.
 
 ## What It Does
 
 - Checks the VPS environment before installation
 - Builds the official StellaGate-UI install command
-- Configures the StellaGate-Cloud URL
+- Configures the official authorization endpoint URL
 - Optionally activates StellaGate-UI with an invite code
 - Verifies panel, Xray, activation, and subscription status
-- Explains StellaGate Cloud/UI error codes in plain language
+- Explains StellaGate authorization and local panel error codes in plain language
 - Protects sensitive values such as root passwords, local API tokens, and activation tokens
 
 ## What It Does Not Do
@@ -78,8 +78,8 @@ curl -fsSL https://raw.githubusercontent.com/Ralph179/StellaGate-UI/codex/stella
 
 ## Contract
 
-The skill follows the shared StellaGate Cloud/UI API contract documented in:
+The skill follows the shared StellaGate authorization API contract documented in:
 
 - `references/cloud-api-contract.md`
 
-If StellaGate-Cloud or StellaGate-UI contains a newer `docs/cloud-api-contract.md`, agents should load that file first and treat it as the current source of truth.
+If either implementation contains a newer `docs/cloud-api-contract.md`, agents should load that file first and treat it as the current source of truth.
