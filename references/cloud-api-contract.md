@@ -4,7 +4,7 @@ This is the authorization contract the StellaGate AI Agent must expect when depl
 
 ## Scope
 
-The author-side management system is private. StellaGate-UI is the user's local VPS panel. The AI Agent only installs, activates, checks, and explains; it does not sell nodes, manage payments, register users, or provide arbitrary remote shell.
+The author-side management system is private. StellaGate-UI is the user-facing local VPS panel. The AI Agent only installs, activates, checks, and explains; it does not replace the product UI.
 
 ## Versioning
 

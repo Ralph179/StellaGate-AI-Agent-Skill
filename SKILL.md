@@ -5,7 +5,7 @@ description: Deploy, activate, inspect, and troubleshoot StellaGate-UI on a user
 
 # StellaGate AI Agent
 
-This skill helps an agent deploy StellaGate-UI on a user's VPS and verify local activation, panel, Xray, and subscription health. It is an operator workflow for the local VPS panel, not a consumer product backend.
+This skill helps an agent deploy the C-end StellaGate-UI product on a user's VPS and verify local activation, panel, Xray, and subscription health. StellaGate-UI is the user-facing local VPS panel; this skill is the agent-facing deployment workflow for that product.
 
 ## Non-Negotiable Boundaries
 
