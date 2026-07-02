@@ -2,7 +2,7 @@
 
 StellaGate AI Agent Skill is a deployment and troubleshooting skill for AI coding agents such as Codex and Claude Code. It helps an agent install StellaGate-UI on a user's VPS, configure the official authorization endpoint, optionally activate it with an invite code, verify panel/Xray/subscription health, and explain common activation errors.
 
-This repository is not StellaGate-Cloud and not StellaGate-UI. StellaGate-Cloud is the author's private management panel; this repository is only the agent-facing operation guide for deploying the local VPS panel.
+This repository is not the local panel itself. It is only the agent-facing operation guide for deploying StellaGate-UI on a user's VPS.
 
 ## What It Does
 
@@ -13,15 +13,6 @@ This repository is not StellaGate-Cloud and not StellaGate-UI. StellaGate-Cloud 
 - Verifies panel, Xray, activation, and subscription status
 - Explains StellaGate authorization and local panel error codes in plain language
 - Protects sensitive values such as root passwords, local API tokens, and activation tokens
-
-## What It Does Not Do
-
-- Does not build an airport/proxy marketplace
-- Does not add payment, packages, balance, orders, tickets, or user registration
-- Does not sell nodes or manage shared traffic pools
-- Does not store VPS root passwords or SSH passwords
-- Does not expose arbitrary remote shell
-- Does not print or persist `activation_token`
 
 ## Skill Layout
 

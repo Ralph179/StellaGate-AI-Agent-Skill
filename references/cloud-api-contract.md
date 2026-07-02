@@ -1,20 +1,14 @@
-# StellaGate Cloud API Contract
+# StellaGate Authorization API Contract
 
-This is the contract the StellaGate AI Agent must expect when deploying or checking StellaGate-UI. If the target repositories contain `docs/cloud-api-contract.md`, load that file first and treat it as the current source of truth. Use this reference as the baseline contract and drift checklist.
+This is the authorization contract the StellaGate AI Agent must expect when deploying or checking StellaGate-UI. If the target repositories contain a newer contract document, load that file first and treat it as the current source of truth. Use this reference as the baseline contract and drift checklist.
 
 ## Scope
 
-StellaGate-Cloud is the author's private central authorization console. StellaGate-UI is the user's local VPS panel. The AI Agent only installs, activates, checks, and explains; it does not sell nodes, manage payments, register users, or provide arbitrary remote shell.
+The author-side management system is private. StellaGate-UI is the user's local VPS panel. The AI Agent only installs, activates, checks, and explains; it does not sell nodes, manage payments, register users, or provide arbitrary remote shell.
 
 ## Versioning
 
-API v1 uses:
-
-```http
-X-StellaGate-Cloud-Version: 1
-X-StellaGate-Client: StellaGate-UI
-X-StellaGate-Client-Version: <panel version>
-```
+API v1 uses version headers defined by the current implementation and this request body field:
 
 Every request body should include:
 
@@ -22,7 +16,7 @@ Every request body should include:
 { "api_version": 1 }
 ```
 
-Every Cloud response should include:
+Every authorization service response should include:
 
 ```json
 { "api_version": 1, "success": true }
@@ -194,12 +188,12 @@ Revoked:
 
 ## Token And Device Rules
 
-- Cloud returns plaintext `activation_token` only once.
-- Cloud stores only the activation token hash and device ID hash.
+- The authorization service returns plaintext `activation_token` only once.
+- The authorization service stores only the activation token hash and device ID hash.
 - StellaGate-UI stores plaintext `activation_token` only in `/etc/x-ui/stellagate-activation.json` with mode `0600`.
 - The Agent must not print, copy, cache, or persist `activation_token`.
 - `device_id` must be stable for the VPS and should be generated from machine identity plus a local random secret.
 
 ## Online State
 
-StellaGate-UI sends heartbeat every 60 seconds. Cloud treats `last_seen_at < 90s` as `online`; older heartbeats are `offline`. Revoked activations should display `revoked`. Temporary Cloud network failures should not stop local Xray; explicit invalidation should lock the panel and disable the managed node.
+StellaGate-UI sends heartbeat every 60 seconds. The authorization service treats `last_seen_at < 90s` as `online`; older heartbeats are `offline`. Revoked activations should display `revoked`. Temporary authorization service network failures should not stop local Xray; explicit invalidation should lock the panel and disable the managed node.

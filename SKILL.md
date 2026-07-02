@@ -9,7 +9,7 @@ This skill helps an agent deploy StellaGate-UI on a user's VPS and verify local 
 
 ## Non-Negotiable Boundaries
 
-- Do not modify StellaGate-Cloud or StellaGate-UI unless the user explicitly asks for product code changes.
+- Do not modify StellaGate-UI or the author-side management system unless the user explicitly asks for product code changes.
 - Do not build an airport/proxy marketplace, payment, packages, node selling, registration, user center, or ticket system.
 - Do not save VPS root passwords, SSH passwords, invite codes, API tokens, or activation tokens in files outside the target system's existing StellaGate paths.
 - Do not expose or return `/etc/x-ui/stellagate-activation.json` contents or any `activation_token`.
